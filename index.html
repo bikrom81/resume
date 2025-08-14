@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ibrahima Diedhiou - Strategic Business Leader</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.06)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateX(-50px) translateY(-50px); }
+            100% { transform: translateX(50px) translateY(50px); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .name {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .title {
+            font-size: 1.3em;
+            font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95em;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+        }
+
+        .sidebar {
+            background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 40px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            border-radius: 2px;
+        }
+
+        .sidebar .section-title::after {
+            width: 30px;
+        }
+
+        .summary {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .competencies {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .competency-group h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .competency-list {
+            list-style: none;
+        }
+
+        .competency-list li {
+            padding: 5px 0;
+            color: #666;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .competency-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .experience-item {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #3498db;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .job-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .company-period {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .job-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .achievements li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.6;
+        }
+
+        .achievements li::before {
+            content: '★';
+            position: absolute;
+            left: 0;
+            color: #f39c12;
+            font-size: 1.2em;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .highlight-box h4 {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 1.8em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .languages, .skills {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .skill-item:last-child {
+            border-bottom: none;
+        }
+
+        .skill-bar {
+            width: 60%;
+            height: 6px;
+            background: #eee;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            border-radius: 3px;
+            animation: fillBar 2s ease-out;
+        }
+
+        @keyframes fillBar {
+            from { width: 0; }
+        }
+
+        .education-item {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .school {
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+
+        .year {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .name {
+                font-size: 2em;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .sidebar, .content {
+                padding: 20px;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .resume-container { box-shadow: none; border-radius: 0; }
+            .print-btn { display: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="resume-container">
+<header class="header">
+<div class="header-content">
+<h1 class="name">IBRAHIMA DIEDHIOU</h1>
+<p class="title">Strategic Business Leader | Chief Commercial Officer | Market Expansion &amp; Transformation Expert</p>
+<div class="contact-info">
+<div class="contact-item">
+<svg class="contact-icon" viewbox="0 0 24 24">
+<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+</svg>
+                        ibrahima.diedhiou@gmail.com
+                    </div>
+<div class="contact-item">
+<svg class="contact-icon" viewbox="0 0 24 24">
+<path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path>
+</svg>
+                        +221 77 562 22 55
+                    </div>
+<div class="contact-item">
+<svg class="contact-icon" viewbox="0 0 24 24">
+<path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
+</svg>
+                        LinkedIn Profile
+                    </div>
+</div>
+</div>
+</header>
+<div class="main-content">
+<aside class="sidebar">
+<div class="section">
+<h2 class="section-title">Core Competencies</h2>
+<div class="competencies">
+<div class="competency-group">
+<h4>Leadership &amp; Strategy</h4>
+<ul class="competency-list">
+<li>Executive Leadership &amp; Team Development</li>
+<li>Strategic Sales &amp; Market Development</li>
+<li>Revenue Growth &amp; Profitability</li>
+<li>Change Management</li>
+</ul>
+</div>
+<div class="competency-group">
+<h4>Digital Excellence</h4>
+<ul class="competency-list">
+<li>ERP &amp; CX Transformation</li>
+<li>Digital Process Automation</li>
+<li>Business Intelligence</li>
+<li>Competitive Positioning</li>
+</ul>
+</div>
+<div class="competency-group">
+<h4>Business Development</h4>
+<ul class="competency-list">
+<li>Multi-Sector Expansion</li>
+<li>Strategic Partnerships</li>
+<li>Key Account Management</li>
+<li>Complex Negotiations</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="languages">
+<h3 class="section-title">Languages</h3>
+<div class="skill-item">
+<span>French</span>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 100%;"></div>
+</div>
+</div>
+<div class="skill-item">
+<span>English</span>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 90%;"></div>
+</div>
+</div>
+</div>
+<div class="skills">
+<h3 class="section-title">Technical Skills</h3>
+<div class="skill-item">
+<span>ERP &amp; CRM Systems</span>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 95%;"></div>
+</div>
+</div>
+<div class="skill-item">
+<span>Business Intelligence</span>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 88%;"></div>
+</div>
+</div>
+<div class="skill-item">
+<span>Process Automation</span>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 82%;"></div>
+</div>
+</div>
+</div>
+</aside>
+<main class="content">
+<div class="section">
+<h2 class="section-title">Executive Summary</h2>
+<p class="summary">
+                        Visionary strategic leader with 20+ years of experience driving revenue growth, market expansion, and operational transformation across telecommunications, technology, and distribution sectors. Proven track record of building high-performing teams, leading strategic turnarounds, and implementing innovative business models to achieve market leadership. Expert at forging strategic partnerships, aligning commercial strategies with corporate vision, and executing large-scale transformation programs that deliver sustained growth in competitive markets.
+                    </p>
+</div>
+<div class="highlight-box">
+<h4>Career Impact Highlights</h4>
+<div class="stats-grid">
+<div class="stat-item">
+<span class="stat-number">20+</span>
+<span>Years Experience</span>
+</div>
+<div class="stat-item">
+<span class="stat-number">40%</span>
+<span>Sales Growth</span>
+</div>
+<div class="stat-item">
+<span class="stat-number">20B+</span>
+<span>FCFA in Contracts</span>
+</div>
+<div class="stat-item">
+<span class="stat-number">25+</span>
+<span>Team Members Led</span>
+</div>
+</div>
+</div>
+<div class="section">
+<h2 class="section-title">Professional Experience</h2>
+<div class="experience-item">
+<h3 class="job-title">Chief Commercial Officer</h3>
+<p class="company-period">RUFSAC S.A., Dakar, Senegal | January 2025 – Present</p>
+<p class="job-description">Leading a nationwide commercial organization of 30 sales professionals, overseeing strategy, execution, 
+and performance to drive sustainable revenue growth in B2B, B2G, and retail channels. Designed and implemented a 
+comprehensive strategic sales plan to strengthen market dominance, adapt to competitive dynamics, and secure new 
+growth segments in corporate, SME, and consumer markets. Reshaped the sales organization to improve efficiency, agility, 
+and profitability, introducing data-driven performance tracking, territory realignment, and targeted training programs. 
+Identified and developed new markets and business processes, reinforcing RUFSAC’s leadership in the industry through 
+product diversification, digital engagement channels, and customer experience improvements. Forged alliances with key 
+industry players and institutional clients to secure multi-year contracts and strengthen recurring revenue streams.</p>
+<ul class="achievements"><li>Increased sales pipeline quality and conversion rates through structured account management and competitive pricing strategies</li><li>Initiated digital transformation roadmap for sales operations, including CRM adoption, sales automation, and customer self-service platforms</li><li>Reduced sales cycle times by streamlining internal processes and decision-making frameworks</li><li>Secured expansion opportunities in adjacent markets to diversify revenue streams and reduce dependency on seasonal demand</li></ul>
+</div>
+<div class="experience-item">
+<h3 class="job-title">Commercial &amp; Business Development Director</h3>
+<p class="company-period">APO GROUP, Dakar, Senegal | 2022 – 2024</p>
+<p class="job-description">
+                            Directed multi-market business development strategies across key accounts, delivering sustained double-digit revenue growth in highly competitive markets.
+                        </p>
+<ul class="achievements">
+<li><strong>40% sales growth</strong> within two years through targeted account acquisition</li>
+<li>Improved gross margins by optimizing partnerships and vendor agreements</li>
+<li>Expanded market penetration in underserved regions and sectors</li>
+<li>Implemented data-driven sales forecasting and KPI dashboards</li>
+</ul>
+</div>
+<div class="experience-item">
+<h3 class="job-title">Principal Sales Engineer</h3>
+<p class="company-period">Oracle, West &amp; Central Africa | 2013 – 2021</p>
+<p class="job-description">Led pre-sales and solution consulting for Oracle’s Customer Experience (CX) suite of applications across West &amp; Central Africa, 
+working with B2B, B2C, and B2G clients. Developed and executed go-to-market strategies to increase awareness of CX technologies and their 
+strategic value in driving customer acquisition, retention, and engagement. Designed tailored, industry-specific solutions aligned with 
+client business objectives, leveraging CX applications to deliver measurable ROI. Created and delivered high-impact product demonstrations 
+showcasing quick-win use cases that accelerated client adoption and revenue generation. Partnered with sales, marketing, and technical teams 
+to craft competitive positioning strategies and respond to complex RFPs.</p>
+<ul class="achievements"><li>Secured multiple strategic wins in competitive bids by demonstrating quantifiable business benefits and rapid time-to-value</li><li>Strengthened Oracle’s market presence in the region through targeted awareness campaigns and thought leadership initiatives</li><li>Designed industry-specific solutions aligned with client business objectives</li><li>Created high-impact demonstrations accelerating client adoption</li></ul>
+</div>
+</div>
+<div class="section">
+<h2 class="section-title">Education</h2>
+<div class="education-item">
+<div class="degree">Master's in Economics</div>
+<div class="school">Cheikh Anta Diop University, Dakar</div>
+<div class="year">2005</div>
+</div>
+<div class="education-item">
+<div class="degree">Executive Training</div>
+<div class="school">Leadership Development &amp; Strategic Management</div>
+<div class="year">Various Institutions</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<button class="print-btn" onclick="window.print()">📄 Print Resume</button>
+<script>
+        // Add smooth scrolling and interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate skill bars
+            const skillBars = document.querySelectorAll('.skill-progress');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            });
+
+            skillBars.forEach(bar => {
+                observer.observe(bar);
+            });
+
+            // Add hover effects to experience items
+            const experienceItems = document.querySelectorAll('.experience-item');
+            experienceItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(10px) scale(1.02)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(5px) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
